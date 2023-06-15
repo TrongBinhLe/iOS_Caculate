@@ -22,9 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let vc = CalculatorViewController()
         
         window.rootViewController = vc
-        window.makeKeyAndVisible()
-        
         self.window = window
+        
+        window.makeKeyAndVisible()
         
     }
 

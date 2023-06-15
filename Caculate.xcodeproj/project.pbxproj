@@ -12,13 +12,13 @@
 		843939262A380936007A4653 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939252A380936007A4653 /* CalculatorViewController.swift */; };
 		8439392B2A380937007A4653 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8439392A2A380937007A4653 /* Assets.xcassets */; };
 		8439392E2A380937007A4653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8439392C2A380937007A4653 /* LaunchScreen.storyboard */; };
-		843939372A3AF735007A4653 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 843939362A3AF735007A4653 /* CombineCocoa */; };
-		8439393A2A3AF773007A4653 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 843939392A3AF773007A4653 /* SnapKit */; };
 		8439393D2A3AFF4D007A4653 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439393C2A3AFF4D007A4653 /* LogoView.swift */; };
 		8439393F2A3B02E1007A4653 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439393E2A3B02E0007A4653 /* ResultView.swift */; };
 		843939412A3B0313007A4653 /* BillInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939402A3B0313007A4653 /* BillInputView.swift */; };
 		843939432A3B033E007A4653 /* TipInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939422A3B033E007A4653 /* TipInputView.swift */; };
 		843939452A3B0363007A4653 /* SplitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939442A3B0363007A4653 /* SplitInputView.swift */; };
+		843939482A3B081E007A4653 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 843939472A3B081E007A4653 /* CombineCocoa */; };
+		8439394B2A3B0843007A4653 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8439394A2A3B0843007A4653 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843939372A3AF735007A4653 /* CombineCocoa in Frameworks */,
-				8439393A2A3AF773007A4653 /* SnapKit in Frameworks */,
+				843939482A3B081E007A4653 /* CombineCocoa in Frameworks */,
+				8439394B2A3B0843007A4653 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,8 +108,8 @@
 			);
 			name = Caculate;
 			packageProductDependencies = (
-				843939362A3AF735007A4653 /* CombineCocoa */,
-				843939392A3AF773007A4653 /* SnapKit */,
+				843939472A3B081E007A4653 /* CombineCocoa */,
+				8439394A2A3B0843007A4653 /* SnapKit */,
 			);
 			productName = Caculate;
 			productReference = 8439391E2A380936007A4653 /* Caculate.app */;
@@ -140,8 +140,8 @@
 			);
 			mainGroup = 843939152A380936007A4653;
 			packageReferences = (
-				843939352A3AF735007A4653 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
-				843939382A3AF772007A4653 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				843939462A3B081E007A4653 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+				843939492A3B0843007A4653 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 8439391F2A380936007A4653 /* Products */;
 			projectDirPath = "";
@@ -320,7 +320,6 @@
 				INFOPLIST_FILE = Caculate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -348,7 +347,6 @@
 				INFOPLIST_FILE = Caculate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -388,33 +386,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		843939352A3AF735007A4653 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+		843939462A3B081E007A4653 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.1;
+				branch = main;
+				kind = branch;
 			};
 		};
-		843939382A3AF772007A4653 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		843939492A3B0843007A4653 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 5.6.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		843939362A3AF735007A4653 /* CombineCocoa */ = {
+		843939472A3B081E007A4653 /* CombineCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 843939352A3AF735007A4653 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			package = 843939462A3B081E007A4653 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
 			productName = CombineCocoa;
 		};
-		843939392A3AF773007A4653 /* SnapKit */ = {
+		8439394A2A3B0843007A4653 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 843939382A3AF772007A4653 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 843939492A3B0843007A4653 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
