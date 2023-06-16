@@ -19,6 +19,10 @@
 		843939452A3B0363007A4653 /* SplitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939442A3B0363007A4653 /* SplitInputView.swift */; };
 		843939482A3B081E007A4653 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 843939472A3B081E007A4653 /* CombineCocoa */; };
 		8439394B2A3B0843007A4653 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8439394A2A3B0843007A4653 /* SnapKit */; };
+		8439394E2A3BFD5A007A4653 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439394D2A3BFD5A007A4653 /* ThemeColor.swift */; };
+		843939502A3BFD82007A4653 /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439394F2A3BFD82007A4653 /* ThemeFont.swift */; };
+		843939532A3BFDCA007A4653 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939522A3BFDCA007A4653 /* UIColor+Extension.swift */; };
+		843939562A3C0966007A4653 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939552A3C0966007A4653 /* LabelFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		843939402A3B0313007A4653 /* BillInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillInputView.swift; sourceTree = "<group>"; };
 		843939422A3B033E007A4653 /* TipInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipInputView.swift; sourceTree = "<group>"; };
 		843939442A3B0363007A4653 /* SplitInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitInputView.swift; sourceTree = "<group>"; };
+		8439394D2A3BFD5A007A4653 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
+		8439394F2A3BFD82007A4653 /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
+		843939522A3BFDCA007A4653 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		843939552A3C0966007A4653 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,9 @@
 		843939202A380936007A4653 /* Caculate */ = {
 			isa = PBXGroup;
 			children = (
+				843939542A3C094D007A4653 /* Factory */,
+				843939512A3BFDAA007A4653 /* Extensions */,
+				8439394C2A3BFD3E007A4653 /* Config */,
 				8439393B2A3AFF37007A4653 /* View */,
 				843939212A380936007A4653 /* AppDelegate.swift */,
 				843939232A380936007A4653 /* SceneDelegate.swift */,
@@ -89,6 +100,31 @@
 				843939442A3B0363007A4653 /* SplitInputView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8439394C2A3BFD3E007A4653 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				8439394D2A3BFD5A007A4653 /* ThemeColor.swift */,
+				8439394F2A3BFD82007A4653 /* ThemeFont.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		843939512A3BFDAA007A4653 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				843939522A3BFDCA007A4653 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		843939542A3C094D007A4653 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				843939552A3C0966007A4653 /* LabelFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,10 +207,14 @@
 			files = (
 				843939262A380936007A4653 /* CalculatorViewController.swift in Sources */,
 				8439393D2A3AFF4D007A4653 /* LogoView.swift in Sources */,
+				8439394E2A3BFD5A007A4653 /* ThemeColor.swift in Sources */,
+				843939532A3BFDCA007A4653 /* UIColor+Extension.swift in Sources */,
 				843939412A3B0313007A4653 /* BillInputView.swift in Sources */,
 				8439393F2A3B02E1007A4653 /* ResultView.swift in Sources */,
 				843939222A380936007A4653 /* AppDelegate.swift in Sources */,
+				843939502A3BFD82007A4653 /* ThemeFont.swift in Sources */,
 				843939242A380936007A4653 /* SceneDelegate.swift in Sources */,
+				843939562A3C0966007A4653 /* LabelFactory.swift in Sources */,
 				843939452A3B0363007A4653 /* SplitInputView.swift in Sources */,
 				843939432A3B033E007A4653 /* TipInputView.swift in Sources */,
 			);

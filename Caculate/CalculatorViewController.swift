@@ -23,7 +23,8 @@ class CalculatorViewController: UIViewController {
         resultView,
         billInputView,
         tipInputView,
-        splitInputView
+        splitInputView,
+        UIView()
         ])
         stackview.axis = .vertical
         stackview.spacing = 36
@@ -33,6 +34,7 @@ class CalculatorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         layout()
         
     }
