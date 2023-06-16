@@ -10,7 +10,9 @@ import UIKit
 
 class BillInputView: UIView {
     private let headerView: HeaderView = {
-        return HeaderView()
+        let view = HeaderView()
+        view.configure(topText: "Enter", bottomText: "your bill")
+        return view
     }()
     
     private let textFieldContainerView: UIView = {
@@ -72,7 +74,6 @@ class BillInputView: UIView {
             make.leading.equalToSuperview()
             make.centerY.equalTo(textFieldContainerView.snp.centerY)
             make.width.equalTo(68)
-            make.height.equalTo(30)
             make.trailing.equalTo(textFieldContainerView.snp.leading).offset(-24)
         }
         textFieldContainerView.snp.makeConstraints { make in
@@ -102,7 +103,29 @@ class BillInputView: UIView {
 }
 
 class HeaderView: UIView {
+    private let topLabel: UILabel = {
+        LabelFactory.build(text: nil, font: ThemeFont.bold(ofSize: 18))
+    }()
     
+    private let bottomLabel: UILabel = {
+        LabelFactory.build(text: nil, font: ThemeFont.regular(ofSize: 16))
+    }()
+    
+    private let topSpacerView = UIView()
+    private let bottomSpacerView = UIView()
+    
+    private lazy var stackView: UIStackView = {
+       let stackView = UIStackView(arrangedSubviews: [
+        topSpacerView,
+        topLabel,
+        bottomLabel,
+        bottomSpacerView
+       ])
+        stackView.axis = .vertical
+        stackView.spacing = UIStackView.spacingUseDefault
+        
+        return stackView
+    }()
     init() {
         super.init(frame: .zero)
         style()
@@ -114,11 +137,23 @@ class HeaderView: UIView {
     }
     
     private func style() {
-        backgroundColor = .red
+        backgroundColor = .systemBackground
     }
     
     private func layout() {
+        addSubview(stackView)
+        stackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
+        topSpacerView.snp.makeConstraints { make in
+            make.height.equalTo(bottomSpacerView)
+        }
+    }
+    
+    func configure(topText: String, bottomText: String) {
+        topLabel.text = topText
+        bottomLabel.text = bottomText
     }
     
 }
