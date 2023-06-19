@@ -25,6 +25,8 @@
 		843939562A3C0966007A4653 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939552A3C0966007A4653 /* LabelFactory.swift */; };
 		843939582A3C3470007A4653 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939572A3C3470007A4653 /* UIView+Extension.swift */; };
 		8439395A2A3C43DD007A4653 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939592A3C43DD007A4653 /* AmountView.swift */; };
+		845CF7A52A40260E008E2FD0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CF7A42A40260E008E2FD0 /* HeaderView.swift */; };
+		845CF7A82A403AD0008E2FD0 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CF7A72A403AD0008E2FD0 /* Tip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		843939552A3C0966007A4653 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 		843939572A3C3470007A4653 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		843939592A3C43DD007A4653 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
+		845CF7A42A40260E008E2FD0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		845CF7A72A403AD0008E2FD0 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		843939202A380936007A4653 /* Caculate */ = {
 			isa = PBXGroup;
 			children = (
+				845CF7A62A403ABA008E2FD0 /* Model */,
 				843939542A3C094D007A4653 /* Factory */,
 				843939512A3BFDAA007A4653 /* Extensions */,
 				8439394C2A3BFD3E007A4653 /* Config */,
@@ -103,6 +108,7 @@
 				843939422A3B033E007A4653 /* TipInputView.swift */,
 				843939442A3B0363007A4653 /* SplitInputView.swift */,
 				843939592A3C43DD007A4653 /* AmountView.swift */,
+				845CF7A42A40260E008E2FD0 /* HeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,6 +137,14 @@
 				843939552A3C0966007A4653 /* LabelFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		845CF7A62A403ABA008E2FD0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				845CF7A72A403AD0008E2FD0 /* Tip.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8439395A2A3C43DD007A4653 /* AmountView.swift in Sources */,
+				845CF7A82A403AD0008E2FD0 /* Tip.swift in Sources */,
 				843939262A380936007A4653 /* CalculatorViewController.swift in Sources */,
 				843939582A3C3470007A4653 /* UIView+Extension.swift in Sources */,
 				8439393D2A3AFF4D007A4653 /* LogoView.swift in Sources */,
@@ -221,6 +236,7 @@
 				8439393F2A3B02E1007A4653 /*  .swift in Sources */,
 				843939222A380936007A4653 /* AppDelegate.swift in Sources */,
 				843939502A3BFD82007A4653 /* ThemeFont.swift in Sources */,
+				845CF7A52A40260E008E2FD0 /* HeaderView.swift in Sources */,
 				843939242A380936007A4653 /* SceneDelegate.swift in Sources */,
 				843939562A3C0966007A4653 /* LabelFactory.swift in Sources */,
 				843939452A3B0363007A4653 /* SplitInputView.swift in Sources */,

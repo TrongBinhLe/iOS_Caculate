@@ -23,7 +23,7 @@ extension UIView {
         
     }
     
-    func addRadius(radius: CGFloat) {
+    func addCornerRadius(radius: CGFloat) {
         layer.cornerRadius = radius
         layer.masksToBounds = false
     }
