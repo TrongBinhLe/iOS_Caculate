@@ -45,7 +45,7 @@ class CalculatorViewController: UIViewController {
     private func bind() {
         let input = CalculatorVM.Input(
             billPublisher: billInputView.billPublisher,
-            tipPublisher: Just(.twentyPercent).eraseToAnyPublisher(),
+            tipPublisher: tipInputView.tipPublisher,
             splitPublisher: Just(23).eraseToAnyPublisher())
         let output = vm.transform(input: input)
         
@@ -54,8 +54,13 @@ class CalculatorViewController: UIViewController {
         }.store(in: &cancellables)
         
         billInputView.billPublisher.sink { bill in
-            print(">> \(bill)")
+            print(">> bill: \(bill)")
         }.store(in: &cancellables)
+        
+        tipInputView.tipPublisher.sink { tip in
+            print(">> tip: \(tip)")
+        }.store(in: &cancellables)
+        
     }
     
     private func layout() {

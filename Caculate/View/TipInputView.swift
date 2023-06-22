@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import Combine
+import CombineCocoa
 
 class TipInputView: UIView {
     private let headerView: HeaderView = {
@@ -17,16 +19,19 @@ class TipInputView: UIView {
     
     private lazy var tenPercentTipButton: UIButton = {
         let button = buildTipButton(tip: .tenPercent)
+        button.tapPublisher.flatMap({ Just(Tip.tenPercent)}).assign(to: \.value, on: tipValueSubject).store(in: &cancelables)
         return button
     }()
     
     private lazy var fiftenPercenTipButton: UIButton = {
         let button = buildTipButton(tip: .fiftenPercent)
+        button.tapPublisher.flatMap({ Just(Tip.fiftenPercent)}).assign(to: \.value, on: tipValueSubject).store(in: &cancelables)
         return button
     }()
     
     private lazy var twentyPercentTipButton: UIButton = {
         let button = buildTipButton(tip: .twentyPercent)
+        button.tapPublisher.flatMap({ Just(Tip.twentyPercent)}).assign(to: \.value, on: tipValueSubject).store(in: &cancelables)
         return button
     }()
     
@@ -66,10 +71,36 @@ class TipInputView: UIView {
         return stackView
     }()
     
+    private let tipValueSubject: CurrentValueSubject<Tip, Never> = .init(.none)
+    var tipPublisher: AnyPublisher<Tip, Never> {
+        return tipValueSubject.eraseToAnyPublisher()
+    }
+    
+    private var cancelables = Set<AnyCancellable>()
+    
     init() {
         super.init(frame: .zero)
         style()
         layout()
+//        observe()
+    }
+    
+    private func observe() {
+        tenPercentTipButton.tapPublisher.sink { [weak self] value in
+            guard let self = self else { return }
+            self.tipValueSubject.value = .tenPercent
+        }.store(in: &cancelables)
+        
+        fiftenPercenTipButton.tapPublisher.sink {  [weak self] value in
+            guard let self = self else { return }
+            self.tipValueSubject.value = .fiftenPercent
+        }.store(in: &cancelables)
+        
+        twentyPercentTipButton.tapPublisher.sink {  [weak self] value in
+            guard let self = self else { return }
+            self.tipValueSubject.value = .twentyPercent
+        }.store(in: &cancelables)
+        
     }
     
     
