@@ -41,8 +41,6 @@ class SplitInputView: UIView {
         ])
         stackView.axis = .horizontal
         stackView.spacing = UIStackView.spacingUseDefault
-        stackView.distribution = .fillEqually
-        
         return stackView
     }()
     

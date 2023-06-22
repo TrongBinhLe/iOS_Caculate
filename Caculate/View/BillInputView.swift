@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import Combine
+import CombineCocoa
 
 class BillInputView: UIView {
     private let headerView: HeaderView = {
@@ -38,7 +40,7 @@ class BillInputView: UIView {
         textField.setContentHuggingPriority(.defaultLow, for: .horizontal)
         textField.textColor = ThemeColor.text
         textField.tintColor = ThemeColor.text
-        // Add toolbar
+        // Add toolbar to custome bottom bar when enter the textField.
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 36))
         toolBar.barStyle = .default
         toolBar.sizeToFit()
@@ -50,12 +52,17 @@ class BillInputView: UIView {
         
         return textField
     }()
-    
+    private let billSubject: PassthroughSubject<Double,Never> = .init()
+    var billPublisher: AnyPublisher<Double, Never> {
+        return billSubject.eraseToAnyPublisher()
+    }
+    private var cancelables = Set<AnyCancellable>()
     
     init() {
         super.init(frame: .zero)
         style()
         layout()
+        observer()
     }
     
     required init?(coder: NSCoder) {
@@ -65,6 +72,13 @@ class BillInputView: UIView {
     private func style() {
         backgroundColor = .systemBackground
 
+    }
+    
+    private func observer() {
+        textField.textPublisher.sink {[weak self] text in
+            guard let self = self else { return }
+            self.billSubject.send(text?.doubleValue ?? 0)
+        }.store(in: &cancelables)
     }
     
     private func layout() {

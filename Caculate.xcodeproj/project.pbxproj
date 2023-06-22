@@ -27,6 +27,9 @@
 		8439395A2A3C43DD007A4653 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939592A3C43DD007A4653 /* AmountView.swift */; };
 		845CF7A52A40260E008E2FD0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CF7A42A40260E008E2FD0 /* HeaderView.swift */; };
 		845CF7A82A403AD0008E2FD0 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CF7A72A403AD0008E2FD0 /* Tip.swift */; };
+		845CF7AC2A419538008E2FD0 /* CalculatorVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CF7AB2A419538008E2FD0 /* CalculatorVM.swift */; };
+		845CF7AE2A419D71008E2FD0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CF7AD2A419D71008E2FD0 /* Result.swift */; };
+		845CF7B02A442123008E2FD0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CF7AF2A442123008E2FD0 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		843939592A3C43DD007A4653 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
 		845CF7A42A40260E008E2FD0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		845CF7A72A403AD0008E2FD0 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
+		845CF7AB2A419538008E2FD0 /* CalculatorVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVM.swift; sourceTree = "<group>"; };
+		845CF7AD2A419D71008E2FD0 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		845CF7AF2A442123008E2FD0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,7 @@
 		843939202A380936007A4653 /* Caculate */ = {
 			isa = PBXGroup;
 			children = (
+				845CF7AA2A419512008E2FD0 /* ViewModel */,
 				845CF7A62A403ABA008E2FD0 /* Model */,
 				843939542A3C094D007A4653 /* Factory */,
 				843939512A3BFDAA007A4653 /* Extensions */,
@@ -127,6 +134,7 @@
 			children = (
 				843939522A3BFDCA007A4653 /* UIColor+Extension.swift */,
 				843939572A3C3470007A4653 /* UIView+Extension.swift */,
+				845CF7AF2A442123008E2FD0 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -143,8 +151,17 @@
 			isa = PBXGroup;
 			children = (
 				845CF7A72A403AD0008E2FD0 /* Tip.swift */,
+				845CF7AD2A419D71008E2FD0 /* Result.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		845CF7AA2A419512008E2FD0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				845CF7AB2A419538008E2FD0 /* CalculatorVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,7 +242,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845CF7AE2A419D71008E2FD0 /* Result.swift in Sources */,
+				845CF7AC2A419538008E2FD0 /* CalculatorVM.swift in Sources */,
 				8439395A2A3C43DD007A4653 /* AmountView.swift in Sources */,
+				845CF7B02A442123008E2FD0 /* String+Extension.swift in Sources */,
 				845CF7A82A403AD0008E2FD0 /* Tip.swift in Sources */,
 				843939262A380936007A4653 /* CalculatorViewController.swift in Sources */,
 				843939582A3C3470007A4653 /* UIView+Extension.swift in Sources */,
