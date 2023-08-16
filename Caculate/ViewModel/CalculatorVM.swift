@@ -10,6 +10,7 @@ import UIKit
 import Combine
 
 class CalculatorVM {
+    private var cancellables = Set<AnyCancellable>()
     
     struct Input {
         let billPublisher: AnyPublisher<Double, Never>
@@ -24,6 +25,9 @@ class CalculatorVM {
     func transform(input: Input) -> Output {
         
         let result = Result(amountPerPerson: 500, totalBill: 299, totalTip: 200)
+        input.tipPublisher.sink{ tip in
+            print("DEBUG: >> tip : \(tip)")
+        }.store(in: &cancellables)
         
         return Output(updateViewPublisher: Just(result).eraseToAnyPublisher())
     }
