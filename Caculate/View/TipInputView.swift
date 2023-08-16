@@ -85,23 +85,41 @@ class TipInputView: UIView {
         super.init(frame: .zero)
         style()
         layout()
-//        observe()
+        observe()
     }
     
     private func observe() {
-        tenPercentTipButton.tapPublisher.sink { [weak self] value in
-            guard let self = self else { return }
-            self.tipValueSubject.value = .tenPercent
-        }.store(in: &cancelables)
-        
-        fiftenPercenTipButton.tapPublisher.sink {  [weak self] value in
-            guard let self = self else { return }
-            self.tipValueSubject.value = .fiftenPercent
-        }.store(in: &cancelables)
-        
-        twentyPercentTipButton.tapPublisher.sink {  [weak self] value in
-            guard let self = self else { return }
-            self.tipValueSubject.value = .twentyPercent
+//        tenPercentTipButton.tapPublisher.sink { [weak self] value in
+//            guard let self = self else { return }
+//            self.tipValueSubject.value = .tenPercent
+//        }.store(in: &cancelables)
+//
+//        fiftenPercenTipButton.tapPublisher.sink {  [weak self] value in
+//            guard let self = self else { return }
+//            self.tipValueSubject.value = .fiftenPercent
+//        }.store(in: &cancelables)
+//
+//        twentyPercentTipButton.tapPublisher.sink {  [weak self] value in
+//            guard let self = self else { return }
+//            self.tipValueSubject.value = .twentyPercent
+//        }.store(in: &cancelables)
+        tipValueSubject.sink { [weak self] tip in
+            guard let `self` = self else { return }
+            self.resetView()
+            switch tip {
+            case .tenPercent:
+                self.tenPercentTipButton.backgroundColor = ThemeColor.secondary
+            case .fiftenPercent:
+                self.fiftenPercenTipButton.backgroundColor = ThemeColor.secondary
+            case .twentyPercent:
+                self.twentyPercentTipButton.backgroundColor = ThemeColor.secondary
+            case .custom(let value):
+                self.customTopButton.backgroundColor = ThemeColor.secondary
+                let textAtributes = NSMutableAttributedString(string: "$\(value)", attributes: [NSAttributedString.Key.font: ThemeFont.bold(ofSize: 20)])
+                textAtributes.addAttributes([NSAttributedString.Key.font : ThemeFont.bold(ofSize: 14)], range: NSMakeRange(0, 1))
+                self.customTopButton.setAttributedTitle(textAtributes, for: .normal)
+            case .none: break
+            }
         }.store(in: &cancelables)
         
     }
@@ -129,6 +147,15 @@ class TipInputView: UIView {
             make.trailing.equalTo(buttonVStackView.snp.leading).offset(-24)
             make.centerY.equalTo(buttonHStackView.snp.centerY)
         }
+    }
+    
+    private func resetView() {
+        [tenPercentTipButton, fiftenPercenTipButton, twentyPercentTipButton, customTopButton].forEach {
+            $0.backgroundColor = ThemeColor.primary
+        }
+        let textAtributes = NSMutableAttributedString(string: "Custome tip", attributes: [NSAttributedString.Key.font: ThemeFont.bold(ofSize: 20)])
+        
+        customTopButton.setAttributedTitle(textAtributes, for: .normal)
     }
     
     private func buildTipButton(tip: Tip) -> UIButton {
