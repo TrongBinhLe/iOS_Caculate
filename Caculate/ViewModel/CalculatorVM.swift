@@ -29,6 +29,10 @@ class CalculatorVM {
             print("DEBUG: >> tip : \(tip)")
         }.store(in: &cancellables)
         
+        input.splitPublisher.sink{ tip in
+            print("DEBUG: >> split : \(tip)")
+        }.store(in: &cancellables)
+        
         return Output(updateViewPublisher: Just(result).eraseToAnyPublisher())
     }
 }
