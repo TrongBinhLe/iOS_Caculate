@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 import Combine
+import CombineCocoa
 
 class CalculatorViewController: UIViewController {
     
@@ -33,6 +34,23 @@ class CalculatorViewController: UIViewController {
         return stackview
     }()
     
+    private lazy var tapPublisher: AnyPublisher<Void, Never> = {
+        let tabGesture = UITapGestureRecognizer()
+        view.addGestureRecognizer(tabGesture)
+        return tabGesture.tapPublisher.flatMap { _ in
+            Just(())
+        }.eraseToAnyPublisher()
+    }()
+    
+    private lazy var logoTapPublisher: AnyPublisher<Void, Never> = {
+        let tapGesture = UITapGestureRecognizer()
+        tapGesture.numberOfTapsRequired = 2
+        logoView.addGestureRecognizer(tapGesture)
+        return tapGesture.tapPublisher.flatMap { _ in
+            Just(())
+        }.eraseToAnyPublisher()
+    }()
+    
     private let vm = CalculatorVM()
     private var cancellables = Set<AnyCancellable>()
 
@@ -41,7 +59,9 @@ class CalculatorViewController: UIViewController {
         view.backgroundColor = .systemBackground
         layout()
         bind()
+        observe()
     }
+    
     private func bind() {
         let input = CalculatorVM.Input(
             billPublisher: billInputView.billPublisher,
@@ -54,6 +74,16 @@ class CalculatorViewController: UIViewController {
             self.resultView.configure(result: result)
         }.store(in: &cancellables)
         
+    }
+    
+    private func observe() {
+        tapPublisher.sink { [unowned self] _ in
+            view.endEditing(true)
+        }.store(in: &cancellables)
+        
+        logoTapPublisher.sink { [unowned self] _ in
+            view.endEditing(true)
+        }.store(in: &cancellables)
     }
     
     private func layout() {
@@ -85,6 +115,10 @@ class CalculatorViewController: UIViewController {
         splitInputView.snp.makeConstraints { make in
             make.height.equalTo(56)
         }
+    }
+    
+    private func resetView() {
+        
     }
     
 }
