@@ -49,16 +49,9 @@ class CalculatorViewController: UIViewController {
             splitPublisher: splitInputView.splitPulisher)
         let output = vm.transform(input: input)
         
-        output.updateViewPublisher.sink { result in
-            print(result)
-        }.store(in: &cancellables)
-        
-        billInputView.billPublisher.sink { bill in
-            print(">> bill: \(bill)")
-        }.store(in: &cancellables)
-        
-        tipInputView.tipPublisher.sink { tip in
-            print(">> tip: \(tip)")
+        output.updateViewPublisher.sink { [weak self] result in
+            guard let `self` = self else { return }
+            self.resultView.configure(result: result)
         }.store(in: &cancellables)
         
     }

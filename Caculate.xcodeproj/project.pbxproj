@@ -13,7 +13,7 @@
 		8439392B2A380937007A4653 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8439392A2A380937007A4653 /* Assets.xcassets */; };
 		8439392E2A380937007A4653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8439392C2A380937007A4653 /* LaunchScreen.storyboard */; };
 		8439393D2A3AFF4D007A4653 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439393C2A3AFF4D007A4653 /* LogoView.swift */; };
-		8439393F2A3B02E1007A4653 /*  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439393E2A3B02E0007A4653 /*  .swift */; };
+		8439393F2A3B02E1007A4653 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439393E2A3B02E0007A4653 /* ResultView.swift */; };
 		843939412A3B0313007A4653 /* BillInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939402A3B0313007A4653 /* BillInputView.swift */; };
 		843939432A3B033E007A4653 /* TipInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939422A3B033E007A4653 /* TipInputView.swift */; };
 		843939452A3B0363007A4653 /* SplitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939442A3B0363007A4653 /* SplitInputView.swift */; };
@@ -43,7 +43,7 @@
 		8439392D2A380937007A4653 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8439392F2A380937007A4653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8439393C2A3AFF4D007A4653 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
-		8439393E2A3B02E0007A4653 /*  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " .swift"; sourceTree = "<group>"; };
+		8439393E2A3B02E0007A4653 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		843939402A3B0313007A4653 /* BillInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillInputView.swift; sourceTree = "<group>"; };
 		843939422A3B033E007A4653 /* TipInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipInputView.swift; sourceTree = "<group>"; };
 		843939442A3B0363007A4653 /* SplitInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitInputView.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				8439393C2A3AFF4D007A4653 /* LogoView.swift */,
-				8439393E2A3B02E0007A4653 /*  .swift */,
+				8439393E2A3B02E0007A4653 /* ResultView.swift */,
 				843939402A3B0313007A4653 /* BillInputView.swift */,
 				843939422A3B033E007A4653 /* TipInputView.swift */,
 				843939442A3B0363007A4653 /* SplitInputView.swift */,
@@ -261,7 +261,7 @@
 				843939532A3BFDCA007A4653 /* UIColor+Extension.swift in Sources */,
 				845CF7B22A445394008E2FD0 /* UIResponse+Extension.swift in Sources */,
 				843939412A3B0313007A4653 /* BillInputView.swift in Sources */,
-				8439393F2A3B02E1007A4653 /*  .swift in Sources */,
+				8439393F2A3B02E1007A4653 /* ResultView.swift in Sources */,
 				843939222A380936007A4653 /* AppDelegate.swift in Sources */,
 				843939502A3BFD82007A4653 /* ThemeFont.swift in Sources */,
 				845CF7A52A40260E008E2FD0 /* HeaderView.swift in Sources */,
