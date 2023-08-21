@@ -149,7 +149,7 @@ class TipInputView: UIView {
         }
     }
     
-    private func resetView() {
+    func resetView() {
         [tenPercentTipButton, fiftenPercenTipButton, twentyPercentTipButton, customTopButton].forEach {
             $0.backgroundColor = ThemeColor.primary
         }

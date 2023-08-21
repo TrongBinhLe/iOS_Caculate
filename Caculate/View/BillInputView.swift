@@ -79,6 +79,7 @@ class BillInputView: UIView {
             guard let self = self else { return }
             self.billSubject.send(text?.doubleValue ?? 0)
         }.store(in: &cancelables)
+        
     }
     
     private func layout() {
@@ -112,6 +113,11 @@ class BillInputView: UIView {
     
     @objc private func doneButtonTapped() {
         textField.endEditing(true)
+    }
+    
+    func reset() {
+        textField.text = nil
+        self.billSubject.send(0)
     }
     
 }

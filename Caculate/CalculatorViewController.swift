@@ -66,7 +66,8 @@ class CalculatorViewController: UIViewController {
         let input = CalculatorVM.Input(
             billPublisher: billInputView.billPublisher,
             tipPublisher: tipInputView.tipPublisher,
-            splitPublisher: splitInputView.splitPulisher)
+            splitPublisher: splitInputView.splitPulisher,
+            logoPublisher: logoTapPublisher)
         let output = vm.transform(input: input)
         
         output.updateViewPublisher.sink { [weak self] result in
@@ -74,14 +75,17 @@ class CalculatorViewController: UIViewController {
             self.resultView.configure(result: result)
         }.store(in: &cancellables)
         
+        output.resultCaculator.sink { [weak self] result in
+            guard let `self` = self else { return }
+            self.splitInputView.reset()
+            self.tipInputView.resetView()
+            self.billInputView.reset()
+        }.store(in: &cancellables)
+        
     }
     
     private func observe() {
         tapPublisher.sink { [unowned self] _ in
-            view.endEditing(true)
-        }.store(in: &cancellables)
-        
-        logoTapPublisher.sink { [unowned self] _ in
             view.endEditing(true)
         }.store(in: &cancellables)
     }
@@ -117,9 +121,6 @@ class CalculatorViewController: UIViewController {
         }
     }
     
-    private func resetView() {
-        
-    }
     
 }
 

@@ -16,10 +16,17 @@ class CalculatorVM {
         let billPublisher: AnyPublisher<Double, Never>
         let tipPublisher: AnyPublisher<Tip, Never>
         let splitPublisher: AnyPublisher<Int, Never>
+        let logoPublisher: AnyPublisher<Void, Never>
     }
     
     struct Output {
         let updateViewPublisher: AnyPublisher<Result, Never>
+        let resultCaculator: AnyPublisher<Void, Never>
+    }
+    
+    private let audioPlayerService: AudioPlayerService
+    init(audioplayService: AudioPlayerService = DefaultAudioPlayer()) {
+        self.audioPlayerService = audioplayService
     }
     
     func transform(input: Input) -> Output {
@@ -35,15 +42,15 @@ class CalculatorVM {
             return Just(result)
             }.eraseToAnyPublisher()
     
-        input.tipPublisher.sink{ tip in
-            print("DEBUG: >> tip : \(tip)")
-        }.store(in: &cancellables)
+        let resultCalculator = input
+            .logoPublisher
+            .handleEvents(receiveOutput: {[unowned self] in
+            self.audioPlayerService.playSound()
+        }).flatMap {
+            return Just($0)
+        }.eraseToAnyPublisher()
         
-        input.splitPublisher.sink{ tip in
-            print("DEBUG: >> split : \(tip)")
-        }.store(in: &cancellables)
-        
-        return Output(updateViewPublisher: updateViewPulisher)
+        return Output(updateViewPublisher: updateViewPulisher, resultCaculator: resultCalculator)
     }
     
     private func getTipAmount(bill: Double, tip: Tip) -> Double {
