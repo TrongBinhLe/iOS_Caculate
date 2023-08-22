@@ -15,10 +15,12 @@ final class CalculateTests: XCTestCase {
     
     private var sut: CalculatorVM!
     private var cancelables: Set<AnyCancellable>!
-    private var logoTabPublisher = PassthroughSubject<Void, Never>()
+    private let logoTabPublisher = PassthroughSubject<Void, Never>()
+    private var audioPlayService: MockAudioPlayerService!
     
     override func setUp() {
-        sut = .init()
+        audioPlayService = .init()
+        sut = .init(audioplayService: audioPlayService)
         cancelables = .init()
         super.setUp()
     }
@@ -94,6 +96,20 @@ final class CalculateTests: XCTestCase {
         }.store(in: &cancelables)
     }
     
+    func testSoundPlayerAndCalculatorResetOnLogoTab() {
+        //give
+        let input = buildInput(bill: 100, tip: .tenPercent, split: 2)
+        let output = sut.transform(input: input)
+        let expectation1 = XCTestExpectation(description: "reset calculator called")
+        let expectation2 = audioPlayService.expectation
+        //then
+        output.resultCaculator.sink { _ in
+            expectation1.fulfill()
+        }.store(in: &cancelables)
+        //when
+        logoTabPublisher.send()
+        wait(for: [expectation1, expectation2], timeout: 1.0)
+    }
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -122,4 +138,13 @@ final class CalculateTests: XCTestCase {
         return .init(billPublisher: Just(bill).eraseToAnyPublisher(), tipPublisher: Just(tip).eraseToAnyPublisher(), splitPublisher: Just(split).eraseToAnyPublisher(), logoPublisher: logoTabPublisher.eraseToAnyPublisher())
     }
 
+}
+
+class MockAudioPlayerService: AudioPlayerService {
+    let expectation = XCTestExpectation(description: "playSound is called")
+    func playSound() {
+        expectation.fulfill()
+    }
+    
+    
 }
