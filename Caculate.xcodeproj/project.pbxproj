@@ -17,7 +17,7 @@
 		843939412A3B0313007A4653 /* BillInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939402A3B0313007A4653 /* BillInputView.swift */; };
 		843939432A3B033E007A4653 /* TipInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939422A3B033E007A4653 /* TipInputView.swift */; };
 		843939452A3B0363007A4653 /* SplitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843939442A3B0363007A4653 /* SplitInputView.swift */; };
-		843939482A3B081E007A4653 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 843939472A3B081E007A4653 /* CombineCocoa */; };
+		843939482A3B081E007A4653 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 843939472A3B081E007A4653 /* CombineCocoa */; settings = {ATTRIBUTES = (Required, ); }; };
 		8439394B2A3B0843007A4653 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8439394A2A3B0843007A4653 /* SnapKit */; };
 		8439394E2A3BFD5A007A4653 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439394D2A3BFD5A007A4653 /* ThemeColor.swift */; };
 		843939502A3BFD82007A4653 /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439394F2A3BFD82007A4653 /* ThemeFont.swift */; };
@@ -33,9 +33,22 @@
 		845CF7B22A445394008E2FD0 /* UIResponse+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CF7B12A445394008E2FD0 /* UIResponse+Extension.swift */; };
 		848A58412A93415600BD08F0 /* click.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 848A58402A93415600BD08F0 /* click.m4a */; };
 		848A58432A93417300BD08F0 /* AudioPlayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A58422A93417300BD08F0 /* AudioPlayService.swift */; };
+		848A584E2A937F4300BD08F0 /* CalculateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A584D2A937F4300BD08F0 /* CalculateTests.swift */; };
+		848A58562A93835800BD08F0 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 848A58552A93835800BD08F0 /* CombineCocoa */; };
+		848A58582A93835C00BD08F0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 848A58572A93835C00BD08F0 /* SnapKit */; };
 		84E032CF2A8DBA400042FB2B /* Init+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E032CE2A8DBA400042FB2B /* Init+Extensions.swift */; };
 		84E032D12A8E01850042FB2B /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E032D02A8E01850042FB2B /* Double+Extension.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		848A584F2A937F4300BD08F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 843939162A380936007A4653 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8439391D2A380936007A4653;
+			remoteInfo = Caculate;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8439391E2A380936007A4653 /* Caculate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caculate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +77,8 @@
 		845CF7B12A445394008E2FD0 /* UIResponse+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponse+Extension.swift"; sourceTree = "<group>"; };
 		848A58402A93415600BD08F0 /* click.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = click.m4a; sourceTree = "<group>"; };
 		848A58422A93417300BD08F0 /* AudioPlayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayService.swift; sourceTree = "<group>"; };
+		848A584B2A937F4300BD08F0 /* CaculateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaculateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		848A584D2A937F4300BD08F0 /* CalculateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateTests.swift; sourceTree = "<group>"; };
 		84E032CE2A8DBA400042FB2B /* Init+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Init+Extensions.swift"; sourceTree = "<group>"; };
 		84E032D02A8E01850042FB2B /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +93,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		848A58482A937F4300BD08F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				848A58562A93835800BD08F0 /* CombineCocoa in Frameworks */,
+				848A58582A93835C00BD08F0 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,7 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				843939202A380936007A4653 /* Caculate */,
+				848A584C2A937F4300BD08F0 /* CaculateTests */,
 				8439391F2A380936007A4653 /* Products */,
+				848A58542A93835800BD08F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				8439391E2A380936007A4653 /* Caculate.app */,
+				848A584B2A937F4300BD08F0 /* CaculateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,6 +222,21 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		848A584C2A937F4300BD08F0 /* CaculateTests */ = {
+			isa = PBXGroup;
+			children = (
+				848A584D2A937F4300BD08F0 /* CalculateTests.swift */,
+			);
+			path = CaculateTests;
+			sourceTree = "<group>";
+		};
+		848A58542A93835800BD08F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,6 +261,28 @@
 			productReference = 8439391E2A380936007A4653 /* Caculate.app */;
 			productType = "com.apple.product-type.application";
 		};
+		848A584A2A937F4300BD08F0 /* CaculateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 848A58512A937F4300BD08F0 /* Build configuration list for PBXNativeTarget "CaculateTests" */;
+			buildPhases = (
+				848A58472A937F4300BD08F0 /* Sources */,
+				848A58482A937F4300BD08F0 /* Frameworks */,
+				848A58492A937F4300BD08F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				848A58502A937F4300BD08F0 /* PBXTargetDependency */,
+			);
+			name = CaculateTests;
+			packageProductDependencies = (
+				848A58552A93835800BD08F0 /* CombineCocoa */,
+				848A58572A93835C00BD08F0 /* SnapKit */,
+			);
+			productName = CaculateTests;
+			productReference = 848A584B2A937F4300BD08F0 /* CaculateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -231,6 +295,10 @@
 				TargetAttributes = {
 					8439391D2A380936007A4653 = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					848A584A2A937F4300BD08F0 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 8439391D2A380936007A4653;
 					};
 				};
 			};
@@ -252,6 +320,7 @@
 			projectRoot = "";
 			targets = (
 				8439391D2A380936007A4653 /* Caculate */,
+				848A584A2A937F4300BD08F0 /* CaculateTests */,
 			);
 		};
 /* End PBXProject section */
@@ -264,6 +333,13 @@
 				848A58412A93415600BD08F0 /* click.m4a in Resources */,
 				8439392E2A380937007A4653 /* LaunchScreen.storyboard in Resources */,
 				8439392B2A380937007A4653 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		848A58492A937F4300BD08F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +376,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		848A58472A937F4300BD08F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				848A584E2A937F4300BD08F0 /* CalculateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		848A58502A937F4300BD08F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8439391D2A380936007A4653 /* Caculate */;
+			targetProxy = 848A584F2A937F4300BD08F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8439392C2A380937007A4653 /* LaunchScreen.storyboard */ = {
@@ -482,6 +574,42 @@
 			};
 			name = Release;
 		};
+		848A58522A937F4300BD08F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 326Z46L2Z3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shrc.tutorial.CaculateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caculate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Caculate";
+			};
+			name = Debug;
+		};
+		848A58532A937F4300BD08F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 326Z46L2Z3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shrc.tutorial.CaculateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caculate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Caculate";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -499,6 +627,15 @@
 			buildConfigurations = (
 				843939332A380937007A4653 /* Debug */,
 				843939342A380937007A4653 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		848A58512A937F4300BD08F0 /* Build configuration list for PBXNativeTarget "CaculateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				848A58522A937F4300BD08F0 /* Debug */,
+				848A58532A937F4300BD08F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -531,6 +668,16 @@
 			productName = CombineCocoa;
 		};
 		8439394A2A3B0843007A4653 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 843939492A3B0843007A4653 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		848A58552A93835800BD08F0 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 843939462A3B081E007A4653 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+		848A58572A93835C00BD08F0 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 843939492A3B0843007A4653 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;

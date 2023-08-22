@@ -37,7 +37,7 @@ class CalculatorVM {
             input.splitPublisher).flatMap {[unowned self] (bill, tip, split) in
             let totalTip = getTipAmount(bill: bill, tip: tip)
             let totalBill = bill + totalTip
-            let amountPerPerson = totalTip / Double(split)
+            let amountPerPerson = totalBill / Double(split)
             let result = Result(amountPerPerson: amountPerPerson, totalBill: totalBill, totalTip: totalTip)
             return Just(result)
             }.eraseToAnyPublisher()
