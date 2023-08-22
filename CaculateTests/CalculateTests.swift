@@ -46,6 +46,55 @@ final class CalculateTests: XCTestCase {
         
     }
 
+    func testResultWithoutTipFor2Person() {
+        //get
+        let bill: Double = 100
+        let tip: Tip = .none
+        let split: Int = 2
+        let input = buildInput(bill: bill, tip: tip, split: split)
+        //when
+        let output = sut.transform(input: input)
+        //then
+        output.updateViewPublisher.sink { result in
+            XCTAssertEqual(result.amountPerPerson, 50)
+            XCTAssertEqual(result.totalBill, 100)
+            XCTAssertEqual(result.totalTip, 0)
+        }.store(in: &cancelables)
+    }
+    
+    func testResultWith10PercentTipFor2Person() {
+        //get
+        let bill: Double = 100
+        let tip: Tip = .tenPercent
+        let split: Int = 2
+        let input = buildInput(bill: bill, tip: tip, split: split)
+        //when
+        let output = sut.transform(input: input)
+        //then
+        output.updateViewPublisher.sink { result in
+            XCTAssertEqual(result.amountPerPerson, 55)
+            XCTAssertEqual(result.totalTip, 10)
+            XCTAssertEqual(result.totalBill, 110)
+        }.store(in: &cancelables)
+    }
+    
+    func testResultWithCustomerTipFor4Person() {
+        //get
+        let bill: Double = 100
+        let tip: Tip = .custom(value: 60)
+        let split: Int = 4
+        let input = buildInput(bill: bill, tip: tip, split: split)
+        //when
+        let ouput = sut.transform(input: input)
+        //then
+        ouput.updateViewPublisher.sink { result in
+            XCTAssertEqual(result.totalBill, 160)
+            XCTAssertEqual(result.totalTip, 60)
+            XCTAssertEqual(result.amountPerPerson, 40)
+        }.store(in: &cancelables)
+    }
+    
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
