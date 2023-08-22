@@ -15,12 +15,13 @@ final class CalculateTests: XCTestCase {
     
     private var sut: CalculatorVM!
     private var cancelables: Set<AnyCancellable>!
-    private let logoTabPublisher = PassthroughSubject<Void, Never>()
+    private var logoTabPublisher: PassthroughSubject<Void, Never>!
     private var audioPlayService: MockAudioPlayerService!
     
     override func setUp() {
         audioPlayService = .init()
         sut = .init(audioplayService: audioPlayService)
+        logoTabPublisher = .init()
         cancelables = .init()
         super.setUp()
     }
@@ -28,6 +29,8 @@ final class CalculateTests: XCTestCase {
     override func tearDown() {
         sut = nil
         cancelables = nil
+        audioPlayService = nil
+        logoTabPublisher = nil
         super.tearDown()
     }
     
