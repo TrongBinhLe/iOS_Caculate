@@ -23,6 +23,7 @@ class ResultView: UIView {
         ])
         text.addAttributes([.font: ThemeFont.bold(ofSize: 24)], range: NSMakeRange(0, 1))
         label.attributedText = text
+        label.accessibilityIdentifier = ScreenIdentifier.ResultView.totalAmountPerPersonValueLabel.rawValue
         
         return label
     }()
@@ -56,12 +57,12 @@ class ResultView: UIView {
     }()
     
     private lazy var totalTipView: AmountView = {
-       let view = AmountView(title: "Total Tip", textAlignment: .left)
+        let view = AmountView(title: "Total Tip", textAlignment: .left, amountLabelIdentifier: ScreenIdentifier.ResultView.totalTipValueLabel.rawValue)
         return view
     }()
     
     private lazy var totalBillView: AmountView = {
-       let view = AmountView(title: "Total Bill", textAlignment: .right)
+        let view = AmountView(title: "Total Bill", textAlignment: .right, amountLabelIdentifier: ScreenIdentifier.ResultView.totalBillValueLabel.rawValue)
         return view
     }()
     

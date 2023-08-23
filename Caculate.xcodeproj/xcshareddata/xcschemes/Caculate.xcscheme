@@ -40,6 +40,17 @@
                ReferencedContainer = "container:Caculate.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "848A58622A94D23E00BD08F0"
+               BuildableName = "CaculateUITests.xctest"
+               BlueprintName = "CaculateUITests"
+               ReferencedContainer = "container:Caculate.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
