@@ -78,7 +78,7 @@ class CalculatorViewController: UIViewController {
         output.resultCaculator.sink { [weak self] result in
             guard let `self` = self else { return }
             self.splitInputView.reset()
-            self.tipInputView.resetView()
+            self.tipInputView.reset()
             self.billInputView.reset()
         }.store(in: &cancellables)
         

@@ -71,4 +71,24 @@ final class CaculateUITests: XCTestCase {
         XCTAssertEqual(screen.totalBillValueLabel.label, "$120")
     }
     
+    func testCustomTipAndSplitBill2() {
+        screen.enterBill(amount: 300)
+        screen.selectedTip(tip: .custom(value: 200))
+        screen.selectIncrementButton(amountOfTaps: 1)
+        XCTAssertEqual(screen.totalAmountPerPersonValueLabel.label, "$250")
+        XCTAssertEqual(screen.totalTipValueLabel.label, "$200")
+        XCTAssertEqual(screen.totalBillValueLabel.label, "$500")
+    }
+    
+    func testResetButton() {
+        screen.enterBill(amount: 300)
+        screen.selectedTip(tip: .custom(value: 200))
+        screen.selectIncrementButton(amountOfTaps: 1)
+        screen.doubleTapLogoView()
+        XCTAssertEqual(screen.totalAmountPerPersonValueLabel.label, "$0")
+        XCTAssertEqual(screen.totalTipValueLabel.label, "$0")
+        XCTAssertEqual(screen.totalBillValueLabel.label, "$0")
+        
+    }
+    
 }

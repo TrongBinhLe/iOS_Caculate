@@ -153,7 +153,7 @@ class TipInputView: UIView {
         }
     }
     
-    func resetView() {
+    private func resetView() {
         [tenPercentTipButton, fiftenPercenTipButton, twentyPercentTipButton, customTopButton].forEach {
             $0.backgroundColor = ThemeColor.primary
         }
@@ -176,6 +176,10 @@ class TipInputView: UIView {
         
         return button
     }
+    
+    func reset() {
+        tipValueSubject.send(.none)
+    }
 }
 
 // Mark: Actions
@@ -190,6 +194,7 @@ extension TipInputView {
                 textField.placeholder = "Make it generous!"
                 textField.keyboardType = .numberPad
                 textField.autocorrectionType = .no
+                textField.accessibilityIdentifier = ScreenIdentifier.TipInputView.customTipAlertTextField.rawValue
             }
             let cancelAction = UIAlertAction(
                 title: "Cancel",

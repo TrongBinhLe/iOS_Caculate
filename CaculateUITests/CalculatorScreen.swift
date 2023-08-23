@@ -83,6 +83,7 @@ class CalculatorScreen {
         case .custom(let value):
             customeTipButton.tap()
             XCTAssertTrue(customAlertTextField.waitForExistence(timeout: 1.0))
+            // Check yes or no the func show customAlert Text Field
             customAlertTextField.typeText("\(value)\n")
         }
     }
