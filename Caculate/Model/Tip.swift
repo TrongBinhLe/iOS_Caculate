@@ -2,7 +2,7 @@
 //  Tip.swift
 //  Caculate
 //
-//  Created by admin on 19/06/2023.
+//  Created by admin on 23/08/2023.
 //
 
 import Foundation
@@ -30,4 +30,3 @@ enum Tip {
         }
     }
 }
-

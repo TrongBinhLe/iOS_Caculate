@@ -19,18 +19,21 @@ class TipInputView: UIView {
     
     private lazy var tenPercentTipButton: UIButton = {
         let button = buildTipButton(tip: .tenPercent)
+        button.accessibilityIdentifier = ScreenIdentifier.TipInputView.tenPercentButton.rawValue
         button.tapPublisher.flatMap({ Just(Tip.tenPercent)}).assign(to: \.value, on: tipValueSubject).store(in: &cancelables)
         return button
     }()
     
     private lazy var fiftenPercenTipButton: UIButton = {
         let button = buildTipButton(tip: .fiftenPercent)
+        button.accessibilityIdentifier = ScreenIdentifier.TipInputView.fifteenPercentButton.rawValue
         button.tapPublisher.flatMap({ Just(Tip.fiftenPercent)}).assign(to: \.value, on: tipValueSubject).store(in: &cancelables)
         return button
     }()
     
     private lazy var twentyPercentTipButton: UIButton = {
         let button = buildTipButton(tip: .twentyPercent)
+        button.accessibilityIdentifier = ScreenIdentifier.TipInputView.twentyPercentButton.rawValue
         button.tapPublisher.flatMap({ Just(Tip.twentyPercent)}).assign(to: \.value, on: tipValueSubject).store(in: &cancelables)
         return button
     }()
@@ -39,6 +42,7 @@ class TipInputView: UIView {
         let button = UIButton()
         button.setTitle("Custom tip", for: .normal)
         button.titleLabel?.font = ThemeFont.bold(ofSize: 20)
+        button.accessibilityIdentifier = ScreenIdentifier.TipInputView.customTipButton.rawValue
         button.backgroundColor = ThemeColor.primary
         button.tintColor = .white
         button.addCornerRadius(radius: 8.0)
