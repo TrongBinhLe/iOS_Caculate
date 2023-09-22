@@ -12,15 +12,3 @@ struct Result {
     let totalBill: Double
     let totalTip: Double
 }
- 
-{sdfasfa
-    dsfadfasfd
-    fasdfasdfasf
-    dfasfdaf
-}
-
-"{{SDFASDF
-
-s
-safd
-}"
